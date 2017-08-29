@@ -7,6 +7,8 @@ sudo apt install software-properties-common
 sudo add-apt-repository ppa:neovim-ppa/stable
 sudo add-apt-repository ppa:a-v-shkop/chromium
 sudo add-apt-repository ppa:tmate.io/archive
+sudo sh -c "echo  'deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main' >> /etc/apt/sources.list.d/pgdg.list"
+wget --q -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo apt update
 sudo apt upgrade -y
 sudo apt autoremove -y
@@ -36,7 +38,7 @@ sudo apt install -y namebench
 sudo apt install -y neovim
 sudo apt install -y pandoc
 sudo apt install -y postgresql
-sudo apt install -y postgresql-contrib 
+sudo apt install -y postgresql-contrib
 sudo apt install -y silversearcher-ag
 sudo apt install -y shellcheck
 sudo apt install -y tmate
@@ -50,19 +52,13 @@ sudo apt install -y zsh
 
 
 # Instação do ZSH e do OH-MY-ZSH
-apt install zsh
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+#apt install zsh
+#sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 # Instalação Pyenv, Virtualenv e Virtualenvwrapper
 apt install -y llvm libncurses5-dev libncursesw5-dev
 curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
 git clone https://github.com/yyuu/pyenv-virtualenvwrapper.git ~/.pyenv/plugins/pyenv-virtualenvwrapper
-
-# install yarn
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt-get update
-sudo apt-get install -y yarn
 
 # install keybase
 curl -O https://prerelease.keybase.io/keybase_amd64.deb
