@@ -1,0 +1,12 @@
+!#/bin/bash
+nmcli connection show --active | grep vpn > /dev/null
+STATUS=$?
+if [ $STATUS == "0" ];then
+  vpnstatus="🔐"
+elif [ $STATUS == "1" ];then
+ vpnstatus="🔓"
+else
+  vpnstatus="❌"
+fi
+echo "VPN: $vpnstatus"
+
